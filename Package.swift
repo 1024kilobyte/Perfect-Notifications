@@ -19,16 +19,14 @@
 
 import PackageDescription
 
-let urls = [
-	"https://github.com/PerfectlySoft/PerfectLib.git",
-	"https://github.com/PerfectlySoft/Perfect-Thread.git",
-	"https://github.com/PerfectlySoft/Perfect-Net.git",
-	"https://github.com/PerfectlySoft/Perfect-HTTP.git",
-	"https://github.com/PerfectlySoft/Perfect-HTTPServer.git"
-]
-
 let package = Package(
     name: "PerfectNotifications",
     targets: [],
-    dependencies: urls.map { .Package(url: $0, majorVersion: 2, minor: 0) }
+    dependencies: [
+    	.Package(url: "https://github.com/PerfectlySoft/PerfectLib.git", majorVersion: 2, minor: 0),
+	.Package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", majorVersion: 2, minor: 0),
+	.Package(url: "https://github.com/PerfectlySoft/Perfect-Net.git", majorVersion: 2, minor: 1),
+	.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTP.git", majorVersion: 2, minor: 1),
+	.Package(url: "https://github.com/PerfectlySoft/Perfect-HTTPServer.git", majorVersion: 2, minor: 1),
+    ]
 )
